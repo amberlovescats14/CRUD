@@ -1,11 +1,13 @@
 import {combineReducers} from "redux";
 
-function someThing(state = "") { 
-  return state;
+const musicArray = (state=[], action) => {
+  switch(action.type){
+    default: return [...state]
+  }
 }
 
 
 const rootReducer = combineReducers({
-  someThing
+  music: musicArray
 });
 export default rootReducer;
