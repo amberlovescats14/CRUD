@@ -4,4 +4,4 @@ import { connect } from 'react-redux'
 const mapStateToProps = (state) => ({
  music: state.music
 })
-export default connect(mapStateToProps, null)(Music)
+export default connect(mapStateToProps)(Music)

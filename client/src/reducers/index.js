@@ -5,9 +5,15 @@ const musicArray = (state=[], action) => {
     default: return [...state]
   }
 }
+const home = (state="", action) => {
+  switch(action.state){
+    default: return state
+  }
+}
 
 
 const rootReducer = combineReducers({
-  music: musicArray
+  music: musicArray,
+  home
 });
 export default rootReducer;
