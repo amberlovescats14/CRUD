@@ -1,10 +1,16 @@
 import React, { Component } from 'react'
+import './css/home.css'
+import { Jumbotron } from 'react-bootstrap'
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
-        <h1>{this.props.home}</h1>
+      <div id="HOME">
+        <div style={{height: '40px'}}></div>
+        <Jumbotron >
+        <h1 
+        className="text-center">WELCOME TO TEXAS COUNTRY</h1>
+        </Jumbotron>
       </div>
     )
   }

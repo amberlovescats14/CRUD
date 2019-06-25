@@ -5,7 +5,7 @@ const musicArray = (state=[], action) => {
     default: return [...state]
   }
 }
-const home = (state="", action) => {
+const homeState = (state="", action) => {
   switch(action.state){
     default: return state
   }
@@ -14,6 +14,6 @@ const home = (state="", action) => {
 
 const rootReducer = combineReducers({
   music: musicArray,
-  home
+  home: homeState
 });
 export default rootReducer;

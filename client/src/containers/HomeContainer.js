@@ -1,8 +1,8 @@
 import Home from '../components/Home'
 import { connect } from 'react-redux'
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => ({
   home: state.home
-}
+})
 
-export default connect(mapStateToProps, null)(Home)
+export default connect(mapStateToProps)(Home)

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { BrowserRouter} from 'react-router-dom'
 import Nav from './components/Nav'
-import MusicContainer from './containers/MusicContainer'
 import Router from './Router'
 
 class App extends Component {
@@ -14,10 +13,7 @@ class App extends Component {
     return (
       <BrowserRouter>
          <div>
-               {/* <Link to='/'>Home</Link> */}
-
         <Nav/>
-        <MusicContainer/>
         <Router/>
         </div>
       </BrowserRouter>

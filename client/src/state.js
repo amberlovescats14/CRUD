@@ -1,61 +1,57 @@
-import React, { Component } from "react";
-import { BrowserRouter, Redirect, Route, Link } from 'react-router-dom'
-import Router from './Router'
-import Johnson from './components/details/Johnson'
-import Rhett from './components/details/Rhett'
-import Grande from './components/details/Grande'
-import Starlito from './components/details/Startlito'
-import Gates from './components/details/Gates'
 
+        // <Route exact strict path="/" component={HomeContainer}/>
+        // <Route exact strict path="/Music" component={MusicContainer}/>
+        // <Route exact strict path="/Brandon-Rhyder" component={Rhyder}/>
+        // <Route exact strict path="/Wade-Bowen" component={Bowen}/>
+        // <Route exact strict path="/Pat-Green" component={Green}/>
+        // <Route exact strict path="/Stoney-LaRue" component={LaRue}/>
+        // <Route exact strict path="/Randy-Rogers" component={Rogers}/>
 export default {
   home: "HOME",
   music : [
     {
       id: 1,
-      artist: "Cody Johnson",
-      song: "On my way to you",
-      year: 2018,
-      genre: "Country",
-      link: <Link to="/details/CodyJohnson">Music</Link>
+      artist: "Wade Bowen",
+      song: "Mood Ring",
+      year: 2011,
+      genre: "Texas-Country",
+      open: false
     },
     {
       id:2,
-      artist: "Thomas Rhett",
-      song: "Remember you young",
-      year: 2019,
-      genre: "country",
-      link: "Thomas-Rhett"
-      // link: <Link to="/details/ThomasRhett">Music</Link>
+      artist: "Brandon Rhyder",
+      song: "Man of Conviction",
+      year: 2015,
+      genre: "Texas-Country",
+      open: false
+
 
     },
     {
       id: 3,
-      artist: "Ariana Grande",
-      song: "7 Rings",
-      year: 2019,
-      genre: "Hip-Hop",
-      link: "Ariana-Grande"
-      // link: <Link to="/details/ArianaGrande">Music</Link>
+      artist: "Pat Green",
+      song: "Take Me Out to a Dancehall",
+      year: 2012,
+      genre: "Texas-Country",
+      open: false
 
     },
     {
       id: 4,
-      artist: "Starlito ft. Don Trip",
-      song: "My Love",
-      year: 2017,
-      genre: "Rap",
-      link: "Starlito"
-      // link: <Link to="/details/Starlito">Music</Link>
+      artist: "Stoney LaRue",
+      song: "Let Me Hold You",
+      year: 2014,
+      genre: "Texas-Country",
+      open: false
 
     },
     {
       id: 5,
-      artist: "Kevin Gates",
-      song: "World Luv",
-      year: 2019,
-      genre: "Rap",
-      link: "Kevin-Gates"
-      // link: <Link to="/details/KevinGates">Music</Link>
+      artist: "Randy Rogers",
+      song: "Fuzzy",
+      year: 2013,
+      genre: "Texas-Country",
+      open: false
 
     }
   ]
