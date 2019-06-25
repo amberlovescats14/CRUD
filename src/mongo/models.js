@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
-const { Auth } = require('./schemas')
+const { Music } = require('./schemas')
 
-const AuthModel = mongoose.model('Auth', Auth, 'auth')
+const MusicModel = mongoose.model('Music', Music)
 
 module.exports = {
-  AuthModel
+  MusicModel
 }
