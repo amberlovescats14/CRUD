@@ -10,7 +10,6 @@ export default class Create extends Component {
       song: "",
       genre: "Texas-Country",
       year: "",
-      users: ['u1', 'u2', 'u3']
     }
   }
   handleSubmit = (e) => {
@@ -54,7 +53,7 @@ export default class Create extends Component {
           <Form.Label>Year</Form.Label>
           <Form.Control type="text" onChange={(e)=> this.setState({ year:e.target.value })}/>
           </Form.Group>
-          <Button variant="primary" type="submit" onClick={this.handleSubmit}>Add to Favorites</Button>
+          <Button href="#" variant="primary" type="submit" onClick={this.handleSubmit}>Add to Favorites</Button>
         </Form>
         </div>
       </div>

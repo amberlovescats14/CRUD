@@ -3,14 +3,15 @@ import { Card, Button } from 'react-bootstrap'
 import axios from 'axios'
 // import {Link} from 'react-router-dom'
 const Cards = props => (
-  <Card className="container">
+  <Card className="container text-center bg-primary text-light" key={props.item.key}>
   <Card.Title><h1>{props.item.artist}</h1></Card.Title>
   <Card.Body>
   Song: {props.item.song} <br/>
   Genre: {props.item.genre} <br/>
   Year: {props.item.year}
-
   </Card.Body>
+  <Button variant="danger" type="button" href="#" 
+  onClick={()=>{props.deleteMusic(props.item._id)}}>Delete</Button>
   </Card>
 )
 
@@ -28,9 +29,18 @@ export default class Music extends Component {
         this.setState({ data: [...res.data ] });
       })
   }
+  
+  deleteMusic = (id) => {
+    axios.delete('/music/'+id)
+      .then(response => { console.log(response.data)});
+
+    this.setState({
+      data: this.state.data.filter(el => el._id !== id)
+    })
+  }
   sendItems = () => {
    return this.state.data.map(eachItem => {
-     return <Cards item={eachItem} key={eachItem.id}/>
+     return <Cards item={eachItem} key={eachItem.id} deleteMusic={this.deleteMusic}/>
    })
   }
   render() {
@@ -39,7 +49,6 @@ export default class Music extends Component {
       style={{width: '100vw', height: '100vh'}}>
         <h1>music</h1>
         {this.sendItems()}
-        {/* <Cards /> */}
       </div>
     )
   }

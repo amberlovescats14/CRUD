@@ -39,16 +39,16 @@ router.post('/', async (req,res)=>{
     res.status(400).json({msg: `SERVER ERROR`})
   }
 
-
-
-
-
-
-
-
-
-
-
+})
+router.delete('/:id', async (req, res) => {
+  try {
+    let singleMusic = await Music.findById(req.params._id)
+    await singleMusic.remove()
+    res.json({msg: `Deleted.`})
+  } catch (error) {
+    console.error(error.message)
+    res.status(400).json({msg: `SERVER ERROR`})
+  }
 })
 
 module.exports = router
