@@ -7,8 +7,10 @@ export default function Nav() {
       <ul style={style}>
         <li>Navigation</li>
         <li> <Link to="/">HOME</Link> </li>
-        <li><Link to="/Music">My Favorites</Link></li>
+        <li><Link to="/Music">Texas Country</Link></li>
         <li><Link to="/Create">Add New</Link></li>
+        {/* <li><Link to="/New">My List</Link></li> */}
+
 
       </ul>
 

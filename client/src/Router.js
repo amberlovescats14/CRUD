@@ -9,7 +9,8 @@ import Bowen from './components/details/Bowen'
 import Green from './components/details/Green'
 import LaRue from './components/details/LaRue'
 import Rogers from './components/details/Rogers'
-import Create from './components/Create'
+import CreateContainer from './containers/CreateContainer'
+import NewStuff from './components/NewStuff'
 
 
 
@@ -24,8 +25,8 @@ export default class Router extends Component {
         <Route exact strict path="/Pat-Green" component={Green}/>
         <Route exact strict path="/Stoney-LaRue" component={LaRue}/>
         <Route exact strict path="/Randy-Rogers" component={Rogers}/>
-        <Route exact strict path="/Create" component={Create}/>
-
+        <Route exact strict path="/Create" component={CreateContainer}/>
+        <Route exact strict path="/New" component={NewStuff}/>
 
       </Switch>
     )

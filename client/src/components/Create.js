@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Button } from 'react-bootstrap'
+import axios from 'axios';
 
 export default class Create extends Component {
   constructor(props){
@@ -7,12 +8,24 @@ export default class Create extends Component {
     this.state={
       artist: "",
       song: "",
-      genre: "",
-      year: ""
+      genre: "Texas-Country",
+      year: "",
+      users: ['u1', 'u2', 'u3']
     }
   }
-  handleSubmit = () => {
-    console.log(`SUBMIT`)
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const createMusic = {
+      artist: this.state.artist,
+      song: this.state.song,
+      genre: this.state.genre,
+      year: this.state.year
+    }
+    
+    console.log(createMusic)
+    axios.post('/music', createMusic)
+      .then(res=> console.log(res.data))
+    window.location = '/Music'
   }
   render() {
     return (
@@ -41,7 +54,7 @@ export default class Create extends Component {
           <Form.Label>Year</Form.Label>
           <Form.Control type="text" onChange={(e)=> this.setState({ year:e.target.value })}/>
           </Form.Group>
-          <Button variant="primary" type="submit" onSubmit={this.handleSubmit}>Add to Favorites</Button>
+          <Button variant="primary" type="submit" onClick={this.handleSubmit}>Add to Favorites</Button>
         </Form>
         </div>
       </div>

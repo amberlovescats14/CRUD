@@ -6,6 +6,8 @@
         // <Route exact strict path="/Pat-Green" component={Green}/>
         // <Route exact strict path="/Stoney-LaRue" component={LaRue}/>
         // <Route exact strict path="/Randy-Rogers" component={Rogers}/>
+
+
 export default {
   home: "HOME",
   music : [
@@ -15,7 +17,8 @@ export default {
       song: "Mood Ring",
       year: 2011,
       genre: "Texas-Country",
-      open: false
+      open: false,
+      link: "/Wade-Bowen"
     },
     {
       id:2,
@@ -23,9 +26,8 @@ export default {
       song: "Man of Conviction",
       year: 2015,
       genre: "Texas-Country",
-      open: false
-
-
+      open: false,
+      link: "/Brandon-Rhyder"
     },
     {
       id: 3,
@@ -33,8 +35,8 @@ export default {
       song: "Take Me Out to a Dancehall",
       year: 2012,
       genre: "Texas-Country",
-      open: false
-
+      open: false,
+      link: "/Pat-Green"
     },
     {
       id: 4,
@@ -42,8 +44,8 @@ export default {
       song: "Let Me Hold You",
       year: 2014,
       genre: "Texas-Country",
-      open: false
-
+      open: false,
+      link: "/Stoney-LaRue"
     },
     {
       id: 5,
@@ -51,10 +53,8 @@ export default {
       song: "Fuzzy",
       year: 2013,
       genre: "Texas-Country",
-      open: false
-
+      open: false,
+      link: "/Brandon-Rhyder"
     }
   ]
 }
-
-
