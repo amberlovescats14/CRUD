@@ -4,7 +4,7 @@ import axios from 'axios'
 import '../components/css/music.css'
 import { Link } from 'react-router-dom'
 const Cards = props => (
-  <Card className="container text-center bg-primary text-light" 
+  <Card  className="amber container text-center bg-primary text-light" 
   style={{display:'flex', flexDirection: 'row', justifyContent: 'space-between'}}
   key={props.item.key}>
   <Card.Title><h1>
@@ -12,7 +12,7 @@ const Cards = props => (
   style={{color: 'black', textDecoration: 'underline'}}>
   {props.item.artist}</Link>  </h1></Card.Title>
   <Button variant="danger" type="button" href="#" 
-  style={{width: '100px', height: '50px'}}
+  style={{width: '100px', height: '50px', marginTop:'10px'}}
   onClick={()=>{props.deleteMusic(props.item._id)}}>Delete</Button>
 
   </Card>
@@ -29,7 +29,7 @@ export default class Music extends Component {
     axios.get('/music')
       .then(res=>{
        
-        this.setState({ data: [...res.data ] });
+        this.setState({ data: [...res.data ].reverse() });
       })
   }
   

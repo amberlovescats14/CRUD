@@ -6,3 +6,8 @@
   list-style: none;
   
 }
+.amber {
+  background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/regal.png');
+  margin-bottom: 20px;
+  width: 40%;
+}

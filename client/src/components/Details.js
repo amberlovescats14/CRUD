@@ -36,9 +36,9 @@ export default class Details extends Component {
           Year: {this.state.year}
         </Card>
         <Button variant="success" type="button" href="#" 
-  onClick={()=>{ window.location = '/edit/'+this.props.match.params.id}}>
-    Edit
-  </Button>
+        onClick={()=>{ window.location = '/edit/'+this.props.match.params.id}}>
+            Edit
+          </Button>
         </Jumbotron>
       </div>
     )

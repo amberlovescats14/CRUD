@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Form, Button } from 'react-bootstrap'
+import '../components/css/edit.css'
 
 export default class Edit extends Component {
   constructor(props){
@@ -22,23 +24,56 @@ export default class Edit extends Component {
           });
       })
   }
-  handleArtist = (e) => {
-    this.setState({ artist: e.target.value  });
+  handleSubmit = (e) => {
+    e.preventDefault()
+
+    const update = {
+      artist: this.state.artist,
+      song: this.state.song,
+      genre: this.state.genre,
+      year: this.state.year
+    }
+    axios.put('/music/'+this.props.match.params.id, update)
+      .then(res=> console.log(res.json))
+      .catch(err=> console.error(err.message))
+
+      window.location ='/music'
   }
+
   
   render() {
     return (
-      <div>
-        <h1>Edit {this.state.artist}...</h1>
-        <div className="container bg-dark text-light">
-        <form>
-          <label for="artist">Artist: </label>
-          <input type="text" name="artist" value={this.state.artist}
-          onChange={this.handleArtist}/> <br/>
-          <label for="song">Song: </label>
-          <input type="text" name="song" value={this.state.song}/>
-          
-        </form>
+      <div className="container-fluid">
+      <div className="formWrapper"
+      style={{border: '4px solid red', borderRadius: '8px', padding:'10px'}}>
+        <Form>
+          <Form.Group controlId="formGroupArtist">
+          <Form.Label>Artist:</Form.Label>
+          <Form.Control type="text" value={this.state.artist}
+          onChange={(e)=> this.setState({ artist: e.target.value })}/>
+          </Form.Group>
+          <Form.Group controlId="formGroupSong">
+          <Form.Label>Song:</Form.Label>
+          <Form.Control type="text" value={this.state.song}
+          onChange={(e)=> this.setState({ song:e.target.value })}/>
+          </Form.Group>
+          <Form.Group controlId="formGroupGenre">
+          <Form.Label>Genre</Form.Label>
+          <Form.Control as="select" value={this.state.genre}
+          onChange={(e)=> this.setState({ genre: e.target.value })}>
+          <option>Texas-Country</option>
+          <option>Bluegrass-Country</option>
+          <option>Classic-Country</option>
+          <option>Todays-Country</option>
+          </Form.Control>
+          </Form.Group>
+          <Form.Group controlId="formGroupYear">
+          <Form.Label>Year</Form.Label>
+          <Form.Control type="text" value={this.state.year}
+          onChange={(e)=> this.setState({ year:e.target.value })}/>
+          </Form.Group>
+          <Button href="#" variant="primary" type="submit" onClick={this.handleSubmit}>Update</Button>
+        </Form>
         </div>
       </div>
     )
