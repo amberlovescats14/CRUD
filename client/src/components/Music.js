@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 import { Card, Button } from 'react-bootstrap'
 import axios from 'axios'
-// import {Link} from 'react-router-dom'
+import '../components/css/music.css'
+import { Link } from 'react-router-dom'
 const Cards = props => (
-  <Card className="container text-center bg-primary text-light" key={props.item.key}>
-  <Card.Title><h1>{props.item.artist}</h1></Card.Title>
-  <Card.Body>
-  Song: {props.item.song} <br/>
-  Genre: {props.item.genre} <br/>
-  Year: {props.item.year}
-  </Card.Body>
+  <Card className="container text-center bg-primary text-light" 
+  style={{display:'flex', flexDirection: 'row', justifyContent: 'space-between'}}
+  key={props.item.key}>
+  <Card.Title><h1>
+  <Link to={"/details/"+props.item._id}
+  style={{color: 'black', textDecoration: 'underline'}}>
+  {props.item.artist}</Link>  </h1></Card.Title>
   <Button variant="danger" type="button" href="#" 
+  style={{width: '100px', height: '50px'}}
   onClick={()=>{props.deleteMusic(props.item._id)}}>Delete</Button>
+
   </Card>
 )
 
@@ -45,10 +48,11 @@ export default class Music extends Component {
   }
   render() {
     return (
-      <div className="bg-dark"
+      <div id="div" className="bg-dark"
       style={{width: '100vw', height: '100vh'}}>
-        <h1>music</h1>
+        <div syle={{marginTop: '450px'}}>.
         {this.sendItems()}
+        </div>
       </div>
     )
   }
@@ -63,54 +67,4 @@ export default class Music extends Component {
 
 
 
-
-// import React from 'react'
-// import { Link } from 'react-router-dom'
-// import { Card, Button } from 'react-bootstrap'
-// import NewStuff from './NewStuff'
-// // import Create from './Create'
-// import './css/music.css'
-// import Matt from './Matt'
-
-// const Cards = (props) => {
-
-//   return (
-//     <div>
-//     <Card className="text-center" style={{width: '80%', margin:'auto'}}>
-//       <Card.Title><h1>{props.item.artist}</h1></Card.Title>
-//       <Card.Body>
-//       <ul id="ul" >
-//       <li>Song Name: {props.item.song}</li>
-//       <li>Genre: {props.item.genre}</li>
-//       <li>Year: {props.item.year}</li>
-//     </ul>
-//       <h1><Link to={props.item.link}>{props.item.link}</Link></h1>
-//       </Card.Body>
-//     <Button variant="warning" >Delete</Button>
-    
-//     </Card>
-   
-//     </div>
-//   )
-// }
-
-// //MAIN COMPONENT
-// const Music = (props) => {
-//   console.log(props.music)
-//   return (
-//     // <BrowserRouter>
-//     <div id="div">
-//     <div className="container">
-//     <div style={{height: '40px'}}></div>
-
-//       {props.music.map((item, i)=> <Cards key={i} item={item} />)}
-//     <Matt/>
-//     </div>
-//     </div>
-//   )
-
-// }
-
-
-// export default Music
 

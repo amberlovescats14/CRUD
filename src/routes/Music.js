@@ -10,6 +10,16 @@ router.get('/', async(req,res)=> {
     res.status(404).json({msg: `SERVER ERROR`})
   }
 })
+router.get('/:id', async (req, res) => {
+  try {
+    let one = await Music.findById(req.params.id)
+    if(!one) res.status(400).json({msg: `Music not found.`})
+    res.json(one)
+  } catch (error) {
+    console.error(error.messag4)
+    res.status(404).json({msg: `Server ERROR`})
+  }
+})
 
 router.post('/', async (req,res)=>{
   const { artist, song, genre, year } = req.body;
@@ -40,9 +50,32 @@ router.post('/', async (req,res)=>{
   }
 
 })
+router.put('/:id', async(req, res) => {
+  try {
+    const singleMusic = await Music.findById(req.params.id)
+    if(!singleMusic){
+      res.status(400).json({msg: `not found`})
+    } else {
+      singleMusic.artist = req.body.artist
+      singleMusic.song = req.body.song
+      singleMusic.genre = req.body.genre
+      singleMusic.year = req.body.year
+      await singleMusic.save()
+      return res.json(singleMusic)
+    }
+    
+  } catch (error) {
+    console.error(error.message)
+    res.status(404).json({msg: `SERVER ERROR`})
+  }
+})
+
 router.delete('/:id', async (req, res) => {
   try {
-    let singleMusic = await Music.findById(req.params._id)
+    const singleMusic = await Music.findById(req.params.id)
+    if(!singleMusic){
+      return res.status(400).json({msg: `NO ID`})
+    }
     await singleMusic.remove()
     res.json({msg: `Deleted.`})
   } catch (error) {

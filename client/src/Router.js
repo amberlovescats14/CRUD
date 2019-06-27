@@ -11,6 +11,8 @@ import LaRue from './components/details/LaRue'
 import Rogers from './components/details/Rogers'
 import CreateContainer from './containers/CreateContainer'
 import NewStuff from './components/NewStuff'
+import Details from './components/Details'
+import Edit from './components/Edit'
 
 
 
@@ -27,6 +29,8 @@ export default class Router extends Component {
         <Route exact strict path="/Randy-Rogers" component={Rogers}/>
         <Route exact strict path="/Create" component={CreateContainer}/>
         <Route exact strict path="/New" component={NewStuff}/>
+        <Route path="/details/:id" component={Details}/>
+        <Route path="/edit/:id" component={Edit}/>
 
       </Switch>
     )
