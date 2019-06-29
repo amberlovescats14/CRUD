@@ -43,8 +43,8 @@ export default class Edit extends Component {
   
   render() {
     return (
-      <div className="container-fluid">
-      <div className="formWrapper"
+      <div className="container-fluid"  id="edit">
+      <div className="formWrapper" id="editWrapper"
       style={{border: '4px solid red', borderRadius: '8px', padding:'10px'}}>
         <Form>
           <Form.Group controlId="formGroupArtist">

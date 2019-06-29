@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+import '../components/css/create.css'
 import { Form, Button } from 'react-bootstrap'
 import axios from 'axios';
+
 
 export default class Create extends Component {
   constructor(props){
@@ -28,10 +30,10 @@ export default class Create extends Component {
   }
   render() {
     return (
-      <div className="container">
-      <div className="formWrapper"
+      <div className="container-fluid " id="create">
+      <div className="formWrapper container" id="createWrapper"
       style={{border: '4px solid red', borderRadius: '8px', padding:'10px'}}>
-        <Form>
+        <Form >
           <Form.Group controlId="formGroupArtist">
           <Form.Label>Artist:</Form.Label>
           <Form.Control type="text" onChange={(e)=> this.setState({ artist: e.target.value })}/>

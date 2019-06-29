@@ -4,7 +4,7 @@ import axios from 'axios'
 import '../components/css/music.css'
 import { Link } from 'react-router-dom'
 const Cards = props => (
-  <Card  className="amber container text-center bg-primary text-light" 
+  <Card  className=" container text-center bg-primary text-light" id="musicCard"
   style={{display:'flex', flexDirection: 'row', justifyContent: 'space-between'}}
   key={props.item.key}>
   <Card.Title><h1>
@@ -48,7 +48,7 @@ export default class Music extends Component {
   }
   render() {
     return (
-      <div id="div" className="bg-dark"
+      <div id="music" className="bg-dark"
       style={{width: '100vw', height: '100vh'}}>
         <div syle={{marginTop: '450px'}}>.
         {this.sendItems()}
